@@ -18,10 +18,10 @@ public:
 	LinkedList() : head{ nullptr } {}
 	LinkedList(const std::initializer_list<T>&);
 
-	void insertNodeStart(T data);
-	void insertNodeEnd(T data);
-	void insertNodePos(unsigned int pos, T data );
-	int getLength() const ;
+	void insertNodeStart(const T& data);
+	void insertNodeEnd(const T& data);
+	void insertNodePos(unsigned int pos, const T& data);
+	unsigned int getLength() const ;
 
 	void deleteNodeStart();
 	void deleteNodeEnd();
@@ -39,7 +39,7 @@ LinkedList<T>::LinkedList(const std::initializer_list<T>& list) {
 }
 
 template <typename T>
-void LinkedList<T>::insertNodeStart(T data) {
+void LinkedList<T>::insertNodeStart(const T& data) {
 	if (head == nullptr) {
 		head = std::make_shared<Node<T>>(data);
 		return;
@@ -50,7 +50,7 @@ void LinkedList<T>::insertNodeStart(T data) {
 }
 
 template <typename T>
-void LinkedList<T>::insertNodeEnd(T data) {
+void LinkedList<T>::insertNodeEnd(const T& data) {
 
 	if (head == nullptr) {
 		head = std::make_shared<Node<T>>(data);
@@ -66,7 +66,7 @@ void LinkedList<T>::insertNodeEnd(T data) {
 }
 
 template <typename T>
-void LinkedList<T>::insertNodePos(unsigned int pos, T data) {
+void LinkedList<T>::insertNodePos(unsigned int pos, const T& data) {
 	if (pos == 1) {
 		insertNodeStart(data);
 		return;
@@ -93,7 +93,7 @@ void LinkedList<T>::insertNodePos(unsigned int pos, T data) {
 }
 
 template <typename T>
-int LinkedList<T>::getLength() const {
+unsigned int LinkedList<T>::getLength() const {
 	if (head == nullptr) {
 		return 0;
 	}

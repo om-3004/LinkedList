@@ -3,6 +3,7 @@
 
 int main()
 {
+    //LinkedList<int> l1;
     LinkedList<int> l1{ 20, 30 };
     l1.displayList();
     std::cout << l1.getLength() << '\n';
@@ -15,7 +16,7 @@ int main()
     l1.displayList();
     std::cout << l1.getLength() << '\n';
 
-    l1.insertNodePos(4, 40);
+    l1.insertNodePos(4u, 40);
     l1.displayList();
     std::cout << l1.getLength() << '\n';
 
@@ -31,7 +32,7 @@ int main()
     l1.displayList();
     std::cout << l1.getLength() << '\n';
 
-    std::cout << "----------------------" << '\n';
+    /*std::cout << "----------------------" << '\n';
     LinkedList<float> l2{ 1.5, 3.0};
     l2.displayList();
 
@@ -61,5 +62,5 @@ int main()
     l3.displayList();
 
     l3.deleteNodePos(1);
-    l3.displayList();
+    l3.displayList();*/
 }
